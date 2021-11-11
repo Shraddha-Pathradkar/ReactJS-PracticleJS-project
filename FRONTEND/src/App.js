@@ -19,7 +19,7 @@ const App = () => {
       <Route path="/home" exact>
         <HomePage />
       </Route>
-      <Redirect to="/login" />
+      <Redirect to="/home" />
     </Switch>
   );
 

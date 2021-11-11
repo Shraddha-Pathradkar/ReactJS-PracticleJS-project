@@ -4,14 +4,21 @@ import "./Login.css";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
+import GoogleLogin from "react-google-login";
 
 const LoginPage = () => {
   let history = useHistory();
 
-  const onFinish = (details) => {
+  const onFinish = (userDetails) => {
     history.push({
       pathname: "/home",
-      //  state: { details }
+      state: { userDetails },
+    });
+  };
+  const responseGoogle = (response) => {
+    history.push({
+      pathname: "/home",
+      state: { response },
     });
   };
 
@@ -68,6 +75,22 @@ const LoginPage = () => {
           Log in
         </Button>
         Or <a href="/#">register now!</a>
+        <div className="signIngoogle-wrapper">
+          Or
+          <GoogleLogin
+            className="signIngoogleBtn"
+            clientId={
+              "1041911607548-2lo88ocjd9ji262cmbra7bc24cgrgsn6.apps.googleusercontent.com"
+            }
+            buttonText="Login"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={"single_host_origin"}
+          >
+            {/* <SvgIcon name="googlelogo" viewbox="0 0 512 512" /> Sign */}
+            Sign in with Google
+          </GoogleLogin>
+        </div>
       </Form.Item>
     </Form>
   );

@@ -1,0 +1,31 @@
+.login-btn {
+  margin-left: 1000px;
+}
+.other-menus {
+  margin-left: 200px;
+}
+.ant-dropdown-link {
+  display: flex;
+  align-items: center;
+  font-size: 4;
+  color: black;
+}
+.headeravatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  overflow: hidden;
+  margin-right: 12px;
+}
+.img {
+  width: 35px;
+}
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  transform: translateX(-70%);
+}
+
+.menu-bar {
+  margin-left: 180px;
+}
